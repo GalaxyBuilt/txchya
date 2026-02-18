@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk to Txchya</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #050505;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #txchya-chat {
+            width: 400px;
+            height: 500px;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+        }
+        #chat-box {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        #chat-box::-webkit-scrollbar {
+            width: 4px;
+        }
+        #chat-box::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 10px;
+        }
+        .user-msg, .txchya-msg {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .user-msg {
+            align-self: flex-end;
+            background: #222;
+            color: #eee;
+            border: 1px solid #444;
+        }
+        .txchya-msg {
+            align-self: flex-start;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            color: #00f3ff;
+            border: 1px solid #00f3ff44;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
+        }
+        #input-area {
+            padding: 15px;
+            border-top: 1px solid #333;
+            display: flex;
+            gap: 10px;
+            background: #111;
+        }
+        #user-input {
+            flex: 1;
+            background: #000;
+            border: 1px solid #333;
+            padding: 10px;
+            color: #fff;
+            border-radius: 6px;
+            outline: none;
+        }
+        #user-input:focus {
+            border-color: #00f3ff;
+        }
+        #send-btn {
+            background: #00f3ff;
+            color: #000;
+            border: none;
+            padding: 0 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        #send-btn:hover {
+            background: #00d8e4;
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="txchya-chat">
+        <div id="chat-box">
+            <div class="txchya-msg"><b>Txchya:</b> Booting up... Systems online. How can I assist you in the ecosystem today?</div>
+        </div>
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="Talk to Txchya..." autofocus />
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <script src="chat-widget.js"></script>
+</body>
+</html>
